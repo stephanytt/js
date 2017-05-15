@@ -27,7 +27,14 @@ function main(){
         })
     });
 }
-
+function imagens(y){
+    var imagemcresce = $(y).attr("src");
+    $("#gallery img").attr("src",imagemcresce);
+    $("#gallery").fadeIn();
+}
+function fecharimg(img){
+    $(img).fadeOut();
+}
 function clica(x){
        var altimg = $(x).attr("alt");
        var img="";

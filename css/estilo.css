@@ -245,3 +245,18 @@ li {
 #contato h1,p{
     color:white;
 }
+#gallery{
+    display: none;
+    height: 75%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 2;
+}
+#gallery img{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    background-color: blue;
+}
