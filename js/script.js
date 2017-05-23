@@ -55,12 +55,23 @@ function clica(x){
             form.innerHTML = data;
         });
 }
-function infoprod(nomeprod){
+function infoprod(nomeprod,img){
     var s = $("input[name='qtdpeca']").val();
+    //Validacao
     if (s==0 || s== null){
         alert("adiciona ai");
     }else{
-        alert("teste");
+        var orca = $("#orcamento").html();
+        if(orca == null || orca ==''){
+           $.get("/orcamento.html",function(data){
+            var form = document.querySelector("#teste");
+            form.innerHTML = data;
+            $("#catselect ul").append( "<li><img width='70' src='"+img+"'> Nome: "+nomeprod+" Qtd: "+s+"</li>" );
+            }); 
+        }else{
+            $("#catselect ul").append( "<li><img width='70' src='"+img+"'> Nome: "+nomeprod+" Qtd: "+s+"</li>" );
+        }
     }
     return false;
 }
+
