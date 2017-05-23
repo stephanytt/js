@@ -55,3 +55,12 @@ function clica(x){
             form.innerHTML = data;
         });
 }
+function infoprod(nomeprod){
+    var s = $("input[name='qtdpeca']").val();
+    if (s==0 || s== null){
+        alert("adiciona ai");
+    }else{
+        alert("teste");
+    }
+    return false;
+}
