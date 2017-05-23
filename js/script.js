@@ -36,25 +36,22 @@ function fecharimg(img){
     $(img).fadeOut();
 }
 function clica(x){
-       var altimg = $(x).attr("alt");
-       var img="";
+       var produto = $(x).attr("class");
+       var prod="";
        var titulo="";
-       switch (altimg) {
-           case 'caricaturas':
-                img = "imgs/noivinhos.png";
-                titulo="Caricaturas";
+       switch (produto) {
+           case 'p1':
+                prod="caricatura.html";
                break;
-            case 'miniaturas':
-                img= "imgs/miniatura.png";
-                titulo= "Miniaturas";
+            case 'p2':
+                prod="miniatura.html";
                break;
-            case 'noivinhos':
-                img = "imgs/noivinhos.png";
-                titulo= "Noivinhos";
+            case 'p3':
+                prod="noivinhos.html";
                break;
        }
-        $.get("/orcamento.html",function(data){
-            var form = document.querySelector("#teste");
+        $.get("/"+prod,function(data){
+            var form = document.querySelector("#prodorc");
             form.innerHTML = data;
         });
 }

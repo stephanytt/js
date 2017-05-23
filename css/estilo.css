@@ -76,9 +76,7 @@ li {
     color:black;
 }
 .sobre{
-    background-color: #be3e82;
-    background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23ffffff' fill-opacity='0.18' fill-rule='evenodd'/%3E%3C/svg%3E");
-    text-align:center;
+    background-image: url(../imgs/produtos.png);
     width:100%;
     height:50%;
 }
@@ -127,7 +125,7 @@ li {
     height:440px;
     width:100%;
 }
-.produtos div{
+.produtos .p1,.p2,.p3{
     text-align:center;
     float: left;
     padding:4.16%;
@@ -135,7 +133,6 @@ li {
     margin: 0 auto;
     width:25%;
 }
-
 #imagens img{
     width: 20%;
     opacity: 0.5;
@@ -178,7 +175,7 @@ li {
     padding-left: 30%;
 }
 #orcamento{
-    background-color:#be3e82;
+    background-color:#fff;
     text-align: center;
     padding: 0 5%;
 }
@@ -188,9 +185,9 @@ li {
     margin: 0 auto 2% auto;
     box-shadow: 0 0 0 0;
     border: 0 none;
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid #be3e82;
     outline: 0;
-    background-color: #be3e82;
+    background-color: #fff;
 }
 
 #orcamento form input[type="submit"]{
@@ -214,7 +211,7 @@ li {
     padding-left: 30%;
 }
 #contato{
-    background-color:#be3e82;
+    background-color:#fff;
     text-align: center;
     padding: 0 5%;
 }
@@ -224,9 +221,9 @@ li {
     margin: 0 auto 2% auto;
     box-shadow: 0 0 0 0;
     border: 0 none;
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid #be3e82;
     outline: 0;
-    background-color: #be3e82;
+    background-color: #fff;
 }
 
 #contato form input[type="submit"]{
@@ -243,7 +240,7 @@ li {
     padding-right: 5%;
 }
 #contato h1,p{
-    color:white;
+    color:black;
 }
 #gallery{
     display: none;
@@ -259,4 +256,14 @@ li {
     transform: translateY(-50%);
     width: 400px;
     background-color: blue;
+}
+.orca1{
+    width:50%;
+    text-align: center;
+}
+#imgorc{
+    width:80%;
+}
+#imgorc img{
+    width:25%;
 }
