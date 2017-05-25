@@ -2,6 +2,21 @@ $(main);
  
 function main(){
     
+    $("#logo").mouseenter(function(){
+        $(this).css({"width":"60%",
+                     "margin-top":"-6%",
+                     "margin-left":"-30%",
+                     "transition": "width 1s, margin-top 1s, margin-left 1s"
+        });    
+    });
+    $("#logo").mouseout(function(){
+        $(this).css({"width":"50%",
+                     "margin-top":"-4%",
+                     "margin-left":"-25%"
+        });    
+    });
+    
+    
     $(".menu li").click(function(){
        var pagina = $(this).html();
        var url="";
@@ -17,6 +32,9 @@ function main(){
                break;
             case 'Sobre':
                url = "/sobre.html";
+               break;
+            case 'Orçamento':
+               url = "/orcamento.html";
                break;
             case 'Contato':
                url = "/contato.html";
@@ -65,4 +83,6 @@ function infoprod(nomeprod,img){
     }
     return false;
 }
-
+function logo(){
+    
+}

@@ -38,7 +38,7 @@ body{
 }
 
 main{
-    margin-top: 3%;
+    margin-top: 4%;
 }
 
 ul{
@@ -81,7 +81,9 @@ li {
     height:50%;
 }
 .sobre h1,p{
-    color:white;
+    color:#000;
+    text-align: center;
+    padding-top:2%;
 }
 
 .footer{
@@ -266,4 +268,11 @@ li {
 }
 #imgorc img{
     width:25%;
+}
+h1{
+    padding-top:2%;
+    text-align:center;
+}
+#pedido li{
+    color:black
 }
