@@ -112,7 +112,7 @@ li {
     width:40px
 }
 .orcamento{
-    float:right;
+    width:50%;
 }
 .orcamento1{
     float:left;
@@ -258,8 +258,8 @@ li {
     background-color: blue;
 }
 .orca1{
-    width:50%;
-    text-align: center;
+    width:100%;
+    
 }
 #imgorc{
     width:80%;

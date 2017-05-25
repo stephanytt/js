@@ -56,21 +56,12 @@ function clica(x){
         });
 }
 function infoprod(nomeprod,img){
-    var s = $("input[name='qtdpeca']").val();
+    var qtd = $("input[name='qtdpeca']").val();
     //Validacao
-    if (s==0 || s== null){
+    if (qtd==0 || qtd== null){
         alert("adiciona ai");
     }else{
-        var orca = $("#orcamento").html();
-        if(orca == null || orca ==''){
-           $.get("/orcamento.html",function(data){
-            var form = document.querySelector("#teste");
-            form.innerHTML = data;
-            $("#catselect ul").append( "<li><img width='70' src='"+img+"'> Nome: "+nomeprod+" Qtd: "+s+"</li>" );
-            }); 
-        }else{
-            $("#catselect ul").append( "<li><img width='70' src='"+img+"'> Nome: "+nomeprod+" Qtd: "+s+"</li>" );
-        }
+        inserir({"name":nomeprod,"qtd":qtd});
     }
     return false;
 }

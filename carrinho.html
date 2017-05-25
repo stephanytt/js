@@ -1,0 +1,45 @@
+<DOCTYPE! html>
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <link href="css/estilo.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/bd.js"></script>
+    <script>
+        $(go)
+        
+        function go(){
+            getAll();
+        }
+        
+        function getAll(){
+            var open = indexedDB.open("Bd-pedido", 1);
+            open.onsuccess = function(){
+                var db = open.result;
+                var tx = db.transaction("MyObjectStore", "readwrite");
+                var store = tx.objectStore("MyObjectStore");
+                
+                var resposta = store.getAll();
+                resposta.onsuccess = function(itens) {
+                    for(var i = 0; i < itens.target.result.length; i++){
+                        var pedido = itens.target.result[i];
+                        document.getElementById("infopedido").innerHTML += "<li>" + pedido.name + " " + pedido.qtd + "</li>"; 
+                    }
+                }
+                
+                tx.oncomplete = function() {
+                    db.close();
+                };
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="pedido">
+    <h1>Pedido</h1>
+        <ul id ="infopedido"> 
+        </ul>
+        
+        <button onclick="inserirnoCarrinho()">Adicionar</button>
+</body>
+</html>
