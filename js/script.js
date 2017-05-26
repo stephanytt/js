@@ -16,7 +16,6 @@ function main(){
         });    
     });
     
-    
     $(".menu li").click(function(){
        var pagina = $(this).html();
        var url="";
@@ -47,11 +46,15 @@ function main(){
 }
 function imagens(y){
     var imagemcresce = $(y).attr("src");
-    $("#gallery img").attr("src",imagemcresce);
+    $("#gallery #gal").attr("src",imagemcresce);
     $("#gallery").fadeIn();
+    $("#esq").css("display", "block");
+    $("#dir").css("display", "block");
 }
 function fecharimg(img){
     $(img).fadeOut();
+    $("#esq").css("display", "none");
+    $("#dir").css("display", "none");
 }
 function clica(x){
        var produto = $(x).attr("class");
@@ -83,6 +86,26 @@ function infoprod(nomeprod,img){
     }
     return false;
 }
-function logo(){
-    
+
+
+function esquerda(){
+    var x = document.getElementById("gal").src.toString();
+    x = x.split("foto");
+    x = x[1].split(".");
+    x = x[0] - 1;
+    alert(x);
+    if(x < 2){
+        x = 9
+    }
+    document.getElementById("gal").src = "imgs/foto" + x + ".png"
+}
+function direita(){
+    var x = document.getElementById("gal").src.toString();
+    x = x.split("foto");
+    x = x[1].split(".");
+    x = parseInt(x[0]) + 1;
+    if(x > 9){
+        x = 2
+    }
+    document.getElementById("gal").src = "imgs/foto" + x + ".png"
 }

@@ -274,5 +274,25 @@ h1{
     text-align:center;
 }
 #pedido li{
-    color:black
+    color:black;
+}
+
+#esq, #dir{
+    width: 5%;
+    position: absolute;
+    top: 67%;
+    z-index: 5;
+    display: none;
+}
+
+#esq{
+    left: 5%;
+}
+
+#dir{
+    right: 5%;
+}
+
+.menu li{
+    cursor: pointer;
 }
