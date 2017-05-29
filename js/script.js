@@ -15,6 +15,15 @@ function main(){
                      "margin-left":"-25%"
         });    
     });
+    //validação formulários
+    $("#nome,#assunto,#msg").keyup(function(){
+        var form = this.value;
+        if(form == null || form == ''){
+            $(this).css("border-color","#be3e82");
+        }else{
+            $(this).css("border-color","green");
+        }
+    });
     
     $(".menu li").click(function(){
        var pagina = $(this).html();
@@ -93,7 +102,6 @@ function esquerda(){
     x = x.split("foto");
     x = x[1].split(".");
     x = x[0] - 1;
-    alert(x);
     if(x < 2){
         x = 9
     }
