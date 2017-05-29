@@ -26,13 +26,13 @@ function main(){
     });
     $("#email").keyup(function() {
         var email = this.value;
-        //guqueroz @ gmail.com
-        // [0]     @  [1]
         var valuemail = email.split("@");
-        if(valuemail[0].length >3){
+        if( (valuemail[0] != undefined) && (valuemail[1] != undefined) && (valuemail[0].length >3)){
+            
             var x =  valuemail[1].split(".");
-            if(x[0].length >0){
-               if(x[1].length >0){
+            if( (x[0] != undefined) && (x[1] != undefined) && (x[0].length >0)){
+                
+               if(x[1] != undefined && x[1].length >0){
                     $(this).css("border-color","green");
                }else{
                     $(this).css("border-color","red");
