@@ -15,8 +15,8 @@ function main(){
                      "margin-left":"-25%"
         });    
     });
-    //validação formulários
-    $("#nome,#assunto,#msg").keyup(function(){
+    //validação formulários (form orçamento)
+    $("#nome,#msg").keyup(function(){
         var form = this.value;
         if(form == null || form == ''){
             $(this).css("border-color","#be3e82");
@@ -44,6 +44,36 @@ function main(){
             $(this).css("border-color","red");
         }
     });
+    //Validação form página de contato
+      $("#nome,#assunto,#msg").keyup(function(){
+        var form = this.value;
+        if(form == null || form == ''){
+            $(this).css("border-color","#be3e82");
+        }else{
+            $(this).css("border-color","green");
+        }
+    });
+    $("#email").keyup(function() {
+        var email = this.value;
+        var valuemail = email.split("@");
+        if( (valuemail[0] != undefined) && (valuemail[1] != undefined) && (valuemail[0].length >3)){
+            
+            var x =  valuemail[1].split(".");
+            if( (x[0] != undefined) && (x[1] != undefined) && (x[0].length >0)){
+                
+               if(x[1] != undefined && x[1].length >0){
+                    $(this).css("border-color","green");
+               }else{
+                    $(this).css("border-color","red");
+                }
+            }else{
+                $(this).css("border-color","red");
+            }            
+        }else{
+            $(this).css("border-color","red");
+        }
+    });
+    
     
     $(".menu li").click(function(){
        var pagina = $(this).html();
