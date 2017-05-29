@@ -24,6 +24,26 @@ function main(){
             $(this).css("border-color","green");
         }
     });
+    $("#email").keyup(function() {
+        var email = this.value;
+        //guqueroz @ gmail.com
+        // [0]     @  [1]
+        var valuemail = email.split("@");
+        if(valuemail[0].length >3){
+            var x =  valuemail[1].split(".");
+            if(x[0].length >0){
+               if(x[1].length >0){
+                    $(this).css("border-color","green");
+               }else{
+                    $(this).css("border-color","red");
+                }
+            }else{
+                $(this).css("border-color","red");
+            }            
+        }else{
+            $(this).css("border-color","red");
+        }
+    });
     
     $(".menu li").click(function(){
        var pagina = $(this).html();
