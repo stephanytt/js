@@ -1,8 +1,9 @@
-function inserirnoCarrinho(){
+/*function inserirnoCarrinho(){
     var name = document.forms.form1.name.value;
     var qtd = parseInt(document.forms.form1.qtd.value);
-    inserir({"name":name,"qtd":qtd});
-}
+    var preco = parseInt()
+    inserir({"name":name,"qtd":qtd},"preco":preco);
+}*/
 
 //{id: 12345, name: "miniaturas", qtd: 2}
 function inserir(pedido){
@@ -40,10 +41,10 @@ function getPedidos(){
             resposta.onsuccess = function(itens) {
                 for(var i = 0; i < itens.target.result.length; i++){
                     var pedido = itens.target.result[i];
-                    if($("#"+pedido.nome).length){
+                    if($("#"+pedido.name).length){
                         alert("ja existe");
                     }else{
-                        document.getElementById("infopedido").innerHTML += "<li id=' "+pedido.nome+" ' >" + pedido.name + " " + pedido.qtd + "</li>"; 
+                        document.getElementById("infopedido").innerHTML += "<li id=' "+pedido.name+" ' >Nome:" + pedido.name + " Qtd:" + pedido.qtd + " Valor do pedido:" + pedido.preco+"</li>"; 
                     }
                 }
             }

@@ -137,11 +137,28 @@ function clica(x){
 }
 function infoprod(nomeprod,img){
     var qtd = $("input[name='qtdpeca']").val();
+    var preco = "";
+    var aux = "";
+    switch (nomeprod) {
+        case 'miniaturas':
+            aux = $(".p2 .preco").html();
+            preco = aux.split(" ")[1].split(",")[0];
+            break;
+        case 'noivinhos':
+            aux = $(".p3 .preco").html();
+            preco = aux.split(" ")[1].split(",")[0];
+            break;
+        case 'caricaturas':
+           aux = $(".p1 .preco").html();
+          preco = aux.split(" ")[1].split(",")[0];
+            break;
+    }
     //Validacao
     if (qtd==0 || qtd== null){
         alert("adiciona ai");
     }else{
-        inserir({"name":nomeprod,"qtd":qtd});
+        var precofinal = qtd * parseInt(preco); 
+        inserir({"name":nomeprod,"qtd":qtd,"preco":precofinal});
     }
     return false;
 }
