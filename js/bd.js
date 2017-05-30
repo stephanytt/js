@@ -26,9 +26,39 @@ function inserir(pedido){
             db.close();
         };
     }
-    
+} 
+function getPedidos(){
+    var open = indexedDB.open("Bd-pedido", 1);
+    open.onsuccess = function(){
+        var db = open.result;
+        try{
+            document.getElementById("infopedido").innerHTML = "";
+            var tx = db.transaction("MyObjectStore", "readwrite");
+            var store = tx.objectStore("MyObjectStore");
+            
+            var resposta = store.getAll();
+            resposta.onsuccess = function(itens) {
+                for(var i = 0; i < itens.target.result.length; i++){
+                    var pedido = itens.target.result[i];
+                    if($("#"+pedido.nome).length){
+                        alert("ja existe");
+                    }else{
+                        document.getElementById("infopedido").innerHTML += "<li id=' "+pedido.nome+" ' >" + pedido.name + " " + pedido.qtd + "</li>"; 
+                    }
+                }
+            }
+              tx.oncomplete = function() {
+                db.close();
+            }
+        
+        }catch (e){
+            document.getElementById("infopedido").innerHTML ="Pedido não foi inserido";
+        }
+        
+        
+    }
 }
-
+/*
 function buscar(){
     getObjId(parseInt(document.forms.form2.id.value));
 }
@@ -52,4 +82,5 @@ function getObjId(id){
         };
     }
 }
+*/
 
